@@ -1,0 +1,242 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { SEOHead } from "@/components/SEOHead";
+import { AdSpace } from "@/components/AdSpace";
+import { teamNames, TeamNameCategory } from "@/data/teamNames";
+import { Copy, RefreshCw, Zap } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+
+const Generator = () => {
+  const [selectedCategory, setSelectedCategory] = useState<TeamNameCategory>("funny");
+  const [generatedName, setGeneratedName] = useState<string>("");
+  const [isGenerating, setIsGenerating] = useState(false);
+  const { toast } = useToast();
+
+  const categories = [
+    { key: "funny" as TeamNameCategory, label: "Funny", description: "Hilarious puns and wordplay" },
+    { key: "inappropriate" as TeamNameCategory, label: "Inappropriate", description: "Edgy and bold names" },
+    { key: "playerThemed" as TeamNameCategory, label: "Player-Themed", description: "Based on NFL stars" },
+    { key: "popCulture" as TeamNameCategory, label: "Pop Culture", description: "Movies, TV, and trends" },
+  ];
+
+  const generateRandomName = () => {
+    setIsGenerating(true);
+    
+    // Add a small delay for better UX
+    setTimeout(() => {
+      const categoryNames = teamNames[selectedCategory];
+      const randomIndex = Math.floor(Math.random() * categoryNames.length);
+      setGeneratedName(categoryNames[randomIndex]);
+      setIsGenerating(false);
+    }, 300);
+  };
+
+  const copyToClipboard = async () => {
+    if (!generatedName) return;
+    
+    try {
+      await navigator.clipboard.writeText(generatedName);
+      toast({
+        title: "Copied!",
+        description: "Team name copied to clipboard",
+      });
+    } catch (err) {
+      toast({
+        title: "Copy failed",
+        description: "Please try selecting and copying the text manually",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Fantasy Football Team Name Generator",
+    "url": "https://teamnamelab.com/generator",
+    "description": "Generate random fantasy football team names from multiple categories including funny, inappropriate, player-themed, and pop culture names.",
+    "applicationCategory": "SportsApplication",
+    "operatingSystem": "Web Browser"
+  };
+
+  return (
+    <>
+      <SEOHead
+        title="Fantasy Football Team Name Generator"
+        description="Generate random fantasy football team names instantly! Choose from funny, inappropriate, player-themed, and pop culture categories. Click to generate your perfect team name now."
+        keywords="fantasy football name generator, random team names, fantasy football generator, team name maker"
+        canonicalUrl="/generator"
+        schemaMarkup={schemaMarkup}
+      />
+
+      <div className="min-h-screen bg-gradient-field">
+        <div className="container mx-auto px-4 py-8">
+          {/* Header Ad */}
+          <div className="flex justify-center mb-8">
+            <AdSpace size="header" />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Main Generator */}
+            <div className="lg:col-span-3">
+              <Card className="mb-8">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-3xl font-bold">
+                    Fantasy Football Team Name Generator
+                  </CardTitle>
+                  <CardDescription className="text-lg">
+                    Select a category and generate your perfect team name instantly
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  {/* Category Selection */}
+                  <div>
+                    <h3 className="text-lg font-semibold mb-4">Choose Your Style</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                      {categories.map((category) => (
+                        <Button
+                          key={category.key}
+                          variant={selectedCategory === category.key ? "default" : "generator"}
+                          className="h-auto py-4 px-4 flex flex-col items-center space-y-2"
+                          onClick={() => setSelectedCategory(category.key)}
+                        >
+                          <span className="font-semibold">{category.label}</span>
+                          <span className="text-xs opacity-80">{category.description}</span>
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Generator Button */}
+                  <div className="text-center">
+                    <Button
+                      variant="hero"
+                      size="lg"
+                      onClick={generateRandomName}
+                      disabled={isGenerating}
+                      className="text-lg px-8 py-6 h-auto"
+                    >
+                      {isGenerating ? (
+                        <>
+                          <RefreshCw className="mr-2 h-5 w-5 animate-spin" />
+                          Generating...
+                        </>
+                      ) : (
+                        <>
+                          <Zap className="mr-2 h-5 w-5" />
+                          Generate Team Name
+                        </>
+                      )}
+                    </Button>
+                  </div>
+
+                  {/* Generated Name Display */}
+                  {generatedName && (
+                    <div className="text-center space-y-4">
+                      <div className="bg-gradient-accent rounded-lg p-6 border-2 border-primary/20">
+                        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                          Your Team Name:
+                        </h2>
+                        <p className="text-3xl md:text-4xl font-black text-primary break-words">
+                          {generatedName}
+                        </p>
+                      </div>
+                      
+                      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                        <Button
+                          variant="secondary"
+                          onClick={copyToClipboard}
+                          className="flex items-center"
+                        >
+                          <Copy className="mr-2 h-4 w-4" />
+                          Copy Name
+                        </Button>
+                        <Button
+                          variant="outline"
+                          onClick={generateRandomName}
+                          disabled={isGenerating}
+                        >
+                          <RefreshCw className="mr-2 h-4 w-4" />
+                          Generate Another
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+
+              {/* How It Works */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>How It Works</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span className="text-primary font-bold text-lg">1</span>
+                      </div>
+                      <h4 className="font-semibold mb-2">Choose Category</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Select from funny, inappropriate, player-themed, or pop culture names
+                      </p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span className="text-primary font-bold text-lg">2</span>
+                      </div>
+                      <h4 className="font-semibold mb-2">Generate Name</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Click the generate button to get a random name from your chosen category
+                      </p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <span className="text-primary font-bold text-lg">3</span>
+                      </div>
+                      <h4 className="font-semibold mb-2">Copy & Use</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Copy your favorite name and use it for your fantasy football team
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-24 space-y-6">
+                <AdSpace size="sidebar" className="mx-auto" />
+                
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Category Stats</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    {categories.map((category) => (
+                      <div key={category.key} className="flex justify-between items-center">
+                        <span className="text-sm">{category.label}</span>
+                        <span className="text-sm font-mono text-muted-foreground">
+                          {teamNames[category.key].length} names
+                        </span>
+                      </div>
+                    ))}
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+
+          {/* Inline Ad */}
+          <div className="flex justify-center mt-12">
+            <AdSpace size="inline" />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Generator;

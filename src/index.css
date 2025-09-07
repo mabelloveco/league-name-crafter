@@ -2,41 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Team Name Lab Design System - Football-themed colors and gradients */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 17% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 17% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 17% 14%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Football field green palette */
+    --primary: 120 45% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 120 55% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 42 100% 50%;
+    --secondary-foreground: 210 17% 14%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 120 20% 96%;
+    --muted-foreground: 120 8% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 42 100% 95%;
+    --accent-foreground: 210 17% 14%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 120 20% 88%;
+    --input: 120 20% 94%;
+    --ring: 120 45% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-field: linear-gradient(180deg, hsl(120 50% 92%), hsl(120 45% 88%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--secondary)), hsl(42 90% 60%));
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +65,42 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 20% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 20% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 20% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 120 55% 45%;
+    --primary-foreground: 210 20% 8%;
+    --primary-glow: 120 65% 55%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 42 100% 60%;
+    --secondary-foreground: 210 20% 8%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 20% 15%;
+    --muted-foreground: 120 5% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 20% 15%;
+    --accent-foreground: 0 0% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
+    --ring: 120 55% 45%;
+
+    /* Dark mode gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-field: linear-gradient(180deg, hsl(210 20% 12%), hsl(210 20% 8%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--secondary)), hsl(42 90% 70%));
+
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
