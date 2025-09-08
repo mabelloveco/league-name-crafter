@@ -279,3 +279,95 @@ const Generator = () => {
 };
 
 export default Generator;
+{/* FAQ */}
+<Card className="mt-8">
+  <CardHeader>
+    <CardTitle>Fantasy Team Name Generator FAQ</CardTitle>
+    <CardDescription>Quick answers to common questions</CardDescription>
+  </CardHeader>
+  <CardContent className="space-y-4">
+    <div>
+      <h4 className="font-semibold">How does the generator work?</h4>
+      <p className="text-sm text-muted-foreground">
+        Click “Generate Team Name.” If you enter a keyword like <em>Mahomes</em>, we’ll blend it into templates. Otherwise we pick from the selected category.
+      </p>
+    </div>
+    <div>
+      <h4 className="font-semibold">Is it free?</h4>
+      <p className="text-sm text-muted-foreground">Yes. You can generate and copy names for free.</p>
+    </div>
+    <div>
+      <h4 className="font-semibold">Can I use these names in my league?</h4>
+      <p className="text-sm text-muted-foreground">
+        Yes. Names are for entertainment. Check your league rules if they restrict inappropriate words.
+      </p>
+    </div>
+    <div>
+      <h4 className="font-semibold">What categories do you support?</h4>
+      <p className="text-sm text-muted-foreground">
+        Funny, Inappropriate, Player-Themed, and Pop Culture. We add more over time.
+      </p>
+    </div>
+    <div>
+      <h4 className="font-semibold">Can I request a name or category?</h4>
+      <p className="text-sm text-muted-foreground">
+        Yes—use the Contact page and suggest players, puns, or themes.
+      </p>
+    </div>
+  </CardContent>
+</Card>
+
+{/* FAQPage JSON-LD */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the generator work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click Generate Team Name. If you enter a keyword, the tool blends it into templates. Otherwise it picks from your selected category."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can generate and copy names at no cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use these names in my league?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. These are for entertainment. Check your league rules if they restrict certain words."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What categories do you support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Funny, Inappropriate, Player-Themed, and Pop Culture. More will be added."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I request a name or category?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes—use the Contact page to suggest players, puns, or themes."
+          }
+        }
+      ]
+    })
+  }}
+/>
+
+
