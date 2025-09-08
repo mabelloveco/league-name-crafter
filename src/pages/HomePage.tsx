@@ -3,20 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { SEOHead } from "@/components/SEOHead";
 import { AdSpace } from "@/components/AdSpace";
-import Generator from "./Generator"; // bring generator onto homepage
+import GeneratorInline from "@/components/GeneratorInline"; // use inline generator component
 import { Trophy, Zap, Users, Star } from "lucide-react";
 
 const HomePage = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Team Name Lab",
-    "url": "https://teamnamelab.com",
-    "description":
+    name: "Team Name Lab",
+    url: "https://teamnamelab.com",
+    description:
       "Generate funny, inappropriate, and creative fantasy football team names instantly. The ultimate fantasy football team name generator with thousands of options.",
-    "potentialAction": {
+    potentialAction: {
       "@type": "SearchAction",
-      "target": "https://teamnamelab.com/generator",
+      target: "https://teamnamelab.com/generator",
       "query-input": "required name=search_term_string",
     },
   };
@@ -32,12 +32,12 @@ const HomePage = () => {
       />
 
       <div className="min-h-screen">
-        {/* Header Ad */}
-        <div className="w-full flex justify-center py-4 bg-gradient-field">
-          <AdSpace size="header" />
+        {/* Header Ad (no reserve so it won't leave gaps until ads serve) */}
+        <div className="w-full flex justify-center py-3 bg-gradient-field">
+          <AdSpace size="header" reserve={false} />
         </div>
 
-        {/* HERO + GENERATOR (no extra gap) */}
+        {/* HERO + GENERATOR */}
         <section className="relative py-12 md:py-16 bg-gradient-field">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-5xl mx-auto">
@@ -49,16 +49,16 @@ const HomePage = () => {
                 Generate the perfect team name for your fantasy football league. From hilarious puns to player references, find your winning identity.
               </p>
 
-              {/* Generator centered inside hero */}
+              {/* Inline generator inside hero */}
               <div className="max-w-4xl mx-auto">
-                <Generator />
+                <GeneratorInline />
               </div>
             </div>
           </div>
         </section>
 
         {/* Features */}
-        <section className="py-16 bg-background">
+        <section className="py-10 md:py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="text-center hover:shadow-lg transition-shadow">
@@ -93,8 +93,8 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Content Section with Sidebar Ad */}
-        <section className="py-16 bg-muted/30">
+        {/* Content + Sidebar Ad */}
+        <section className="py-10 md:py-16 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               <div className="lg:col-span-3">
@@ -103,33 +103,30 @@ const HomePage = () => {
                     The Ultimate Fantasy Football Team Name Generator
                   </h2>
                   <p className="text-muted-foreground mb-6">
-                    Your fantasy football team name is more than just a label – it's your identity,
-                    your trash-talking ammunition, and your legacy in the league.
+                    Your fantasy football team name is more than just a label – it's your identity, your trash-talking ammunition, and your legacy in the league.
                   </p>
-                  <h3 className="text-2xl font-semibold text-foreground mb-4">
-                    Why Your Team Name Matters
-                  </h3>
+                  <h3 className="text-2xl font-semibold text-foreground mb-4">Why Your Team Name Matters</h3>
                   <p className="text-muted-foreground mb-6">
-                    A great fantasy football team name sets the tone for your season. A funny name
-                    can get laughs, an inappropriate one can intimidate, and a clever reference shows
-                    you know your football.
+                    A great fantasy football team name sets the tone for your season. A funny name can get laughs, an inappropriate one can intimidate, and a clever reference shows you know your football.
                   </p>
                 </div>
               </div>
 
               <div className="lg:col-span-1">
                 <div className="sticky top-24 space-y-6">
-                  <AdSpace size="sidebar" className="mx-auto" />
+                  {/* Collapse until ads go live */}
+                  <AdSpace size="sidebar" reserve={false} className="mx-auto" />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Inline Ad */}
-        <section className="py-8 bg-background">
+        {/* Inline Ad at bottom */}
+        <section className="py-6 md:py-8 bg-background">
           <div className="container mx-auto px-4 text-center">
-            <AdSpace size="inline" className="mx-auto" />
+            {/* Collapse until ads go live */}
+            <AdSpace size="inline" reserve={false} className="mx-auto" />
           </div>
         </section>
       </div>
