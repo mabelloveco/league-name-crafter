@@ -37,26 +37,23 @@ const HomePage = () => {
           <AdSpace size="header" />
         </div>
 
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-field">
+        {/* HERO + GENERATOR (no extra gap) */}
+        <section className="relative py-12 md:py-16 bg-gradient-field">
           <div className="container mx-auto px-4 text-center">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+            <div className="max-w-5xl mx-auto">
+              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 md:mb-6">
                 Fantasy Football
                 <span className="block text-primary">Team Names</span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Generate the perfect team name for your fantasy football league. From hilarious puns
-                to player references, find your winning identity.
+              <p className="text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto">
+                Generate the perfect team name for your fantasy football league. From hilarious puns to player references, find your winning identity.
               </p>
-            </div>
-          </div>
-        </section>
 
-        {/* Inline generator directly on homepage */}
-        <section className="py-12 bg-background">
-          <div className="container mx-auto px-4">
-            <Generator />
+              {/* Generator centered inside hero */}
+              <div className="max-w-4xl mx-auto">
+                <Generator />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -68,36 +65,28 @@ const HomePage = () => {
                 <CardHeader>
                   <Trophy className="w-12 h-12 mx-auto text-primary mb-4" />
                   <CardTitle>Funny Names</CardTitle>
-                  <CardDescription>
-                    Hilarious puns and clever wordplay that'll have your league laughing
-                  </CardDescription>
+                  <CardDescription>Hilarious puns and clever wordplay that'll have your league laughing</CardDescription>
                 </CardHeader>
               </Card>
               <Card className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <Star className="w-12 h-12 mx-auto text-secondary mb-4" />
                   <CardTitle>Inappropriate Names</CardTitle>
-                  <CardDescription>
-                    Edgy and bold names for leagues that aren't afraid to push boundaries
-                  </CardDescription>
+                  <CardDescription>Edgy and bold names for leagues that aren't afraid to push boundaries</CardDescription>
                 </CardHeader>
               </Card>
               <Card className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <Users className="w-12 h-12 mx-auto text-primary mb-4" />
                   <CardTitle>Player-Themed</CardTitle>
-                  <CardDescription>
-                    Creative names based on your favorite NFL stars and personalities
-                  </CardDescription>
+                  <CardDescription>Creative names based on your favorite NFL stars and personalities</CardDescription>
                 </CardHeader>
               </Card>
               <Card className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <Zap className="w-12 h-12 mx-auto text-secondary mb-4" />
                   <CardTitle>Pop Culture</CardTitle>
-                  <CardDescription>
-                    Names inspired by movies, TV shows, and trending cultural references
-                  </CardDescription>
+                  <CardDescription>Names inspired by movies, TV shows, and trending cultural references</CardDescription>
                 </CardHeader>
               </Card>
             </div>
