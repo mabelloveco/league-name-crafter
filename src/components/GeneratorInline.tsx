@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -173,3 +174,11 @@ export default function GeneratorInline() {
     </Card>
   );
 }
+git pull --rebase origin main
+git add src/components/GeneratorInline.tsx
+git commit -m "Redesign generator as chat-style prompt; compact ideas; no fade"
+git push
+
+<Button variant="outline" onClick={generateRandomName} disabled={isGenerating}>
+
+
