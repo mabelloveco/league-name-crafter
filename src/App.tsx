@@ -13,6 +13,10 @@ import InappropriateNames from "./pages/InappropriateNames";
 import PlayerThemedNames from "./pages/PlayerThemedNames";
 import PopCultureNames from "./pages/PopCultureNames";
 
+// NEW: blog pages
+import BlogList from "./pages/BlogList";
+import BlogPost from "./pages/BlogPost";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -32,6 +36,11 @@ const App = () => (
                 <Route path="/inappropriate-names" element={<InappropriateNames />} />
                 <Route path="/player-themed-names" element={<PlayerThemedNames />} />
                 <Route path="/pop-culture-names" element={<PopCultureNames />} />
+                
+                {/* BLOG ROUTES */}
+                <Route path="/blog" element={<BlogList />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
+
                 {/* CATCH-ALL: redirect unknown routes to home */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
@@ -45,4 +54,3 @@ const App = () => (
 );
 
 export default App;
-
