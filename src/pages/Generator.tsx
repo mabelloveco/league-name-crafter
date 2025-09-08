@@ -14,7 +14,7 @@ const Generator = () => {
         "name": "Where is the name generator?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The generator now lives on the homepage so you can use it immediately. Go to Team Name Lab home to generate names."
+          "text": "The generator is on the homepage directly under the hero for one-click access."
         }
       },
       {
@@ -22,7 +22,7 @@ const Generator = () => {
         "name": "How do I personalize a name?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Type a keyword like a player name in the input. We blend it into templates such as “Mahomes Dynasty” or “Run Mahomes.”"
+          "text": "Type a keyword like a player name. We blend it into templates such as “Mahomes Dynasty” or “Run Mahomes”."
         }
       },
       {
@@ -30,15 +30,15 @@ const Generator = () => {
         "name": "What categories are available?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Funny, Inappropriate, Player-Themed, and Pop Culture. More are added over time."
+          "text": "Funny, Inappropriate, Player-Themed, and Pop Culture."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I use the names in my league?",
+        "name": "Can I use these names in my league?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Names are for entertainment. Check your league rules for word restrictions."
+          "text": "Yes. They’re for entertainment. Check your league rules for word restrictions."
         }
       }
     ]
@@ -53,7 +53,6 @@ const Generator = () => {
         schemaMarkup={faqLd}
       />
       <div className="min-h-screen">
-        {/* keep ads consistent and tight */}
         <div className="w-full flex justify-center py-4 bg-gradient-field">
           <AdSpace size="header" />
         </div>
@@ -63,16 +62,14 @@ const Generator = () => {
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl font-bold mb-4 text-center">Generator Q&amp;A</h1>
               <p className="text-muted-foreground text-center mb-8">
-                The generator now loads on the homepage for fewer clicks. Use the button below to start.
+                The generator now loads on the homepage. Use the button below to start.
               </p>
 
               <div className="flex justify-center mb-10">
-                <Link to="/">
-                  <Button size="lg">Open Generator</Button>
-                </Link>
+                <Link to="/"><Button size="lg">Open Generator</Button></Link>
               </div>
 
-              <Card className="mb-6">
+              <Card>
                 <CardHeader>
                   <CardTitle>Frequently Asked Questions</CardTitle>
                   <CardDescription>Short, practical answers</CardDescription>
@@ -81,13 +78,13 @@ const Generator = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Where is the name generator?</h3>
                     <p className="text-sm text-muted-foreground">
-                      On the homepage. It appears directly under the hero so you can generate names immediately.
+                      On the homepage under the hero for one-click access.
                     </p>
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">How do I personalize a name?</h3>
                     <p className="text-sm text-muted-foreground">
-                      Type a keyword like a player or theme. We combine it with proven templates.
+                      Type a keyword like a player or theme. We combine it with templates.
                     </p>
                   </div>
                   <div>
@@ -103,7 +100,7 @@ const Generator = () => {
                 </CardContent>
               </Card>
 
-              <div className="flex justify-center">
+              <div className="flex justify-center mt-8">
                 <AdSpace size="inline" />
               </div>
             </div>
