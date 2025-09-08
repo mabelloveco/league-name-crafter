@@ -1,34 +1,51 @@
-interface AdSpaceProps {
-  size: "header" | "sidebar" | "inline";
+import { useEffect } from "react";
+
+type Size = "header" | "sidebar" | "inline";
+
+export function AdSpace({
+  size,
+  className,
+  test = false,
+}: {
+  size: Size;
   className?: string;
-}
+  test?: boolean; // set true until AdSense approval
+}) {
+  // Map your AdSense slot IDs here (from AdSense → Ad units)
+  const slots: Record<Size, string> = {
+    header:  "REPLACE_WITH_HEADER_SLOT_ID",
+    sidebar: "REPLACE_WITH_SIDEBAR_SLOT_ID",
+    inline:  "REPLACE_WITH_INLINE_SLOT_ID",
+  };
 
-const adSizes = {
-  header: { width: "728px", height: "90px", label: "728x90" },
-  sidebar: { width: "300px", height: "250px", label: "300x250" },
-  inline: { width: "336px", height: "280px", label: "336x280" },
-};
+  // Reserve space to avoid layout shift
+  const wrapperStyle =
+    size === "header"
+      ? { minHeight: 90 }
+      : size === "sidebar"
+      ? { minHeight: 250 }
+      : { minHeight: 250 };
 
-export const AdSpace = ({ size, className = "" }: AdSpaceProps) => {
-  const adConfig = adSizes[size];
+  useEffect(() => {
+    try {
+      // @ts-ignore
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch {}
+  }, [size]);
 
   return (
-    <div 
-      className={`bg-accent/20 border-2 border-dashed border-border rounded-lg flex items-center justify-center ${className}`}
-      style={{ 
-        width: adConfig.width, 
-        height: adConfig.height,
-        maxWidth: "100%"
-      }}
-    >
-      <div className="text-center p-4">
-        <p className="text-xs text-muted-foreground font-mono">
-          {adConfig.label} Ad Unit
-        </p>
-        <p className="text-xs text-muted-foreground mt-1">
-          Google AdSense Ready
-        </p>
-      </div>
+    <div className={className} style={wrapperStyle}>
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-2337232287180075"
+        data-ad-slot={slots[size]}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+        {...(test ? { "data-adtest": "on" } : {})}
+      />
     </div>
   );
-};
+}
+
+export default AdSpace;
