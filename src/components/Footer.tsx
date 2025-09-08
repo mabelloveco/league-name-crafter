@@ -15,7 +15,7 @@ export const Footer = () => {
               <span className="font-bold text-lg text-primary">Team Name Lab</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Generate the perfect fantasy football team name for your league. From funny to inappropriate, we've got you covered.
+              Generate the perfect fantasy football team name for your league. From funny to inappropriate, we’ve got you covered.
             </p>
           </div>
 
@@ -55,6 +55,26 @@ export const Footer = () => {
                   Name Generator
                 </Link>
               </li>
+              <li>
+                <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -69,7 +89,7 @@ export const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 Team Name Lab. All rights reserved. Generated team names are for entertainment purposes only.
+            © {new Date().getFullYear()} Team Name Lab. All rights reserved. Generated team names are for entertainment purposes only.
           </p>
         </div>
       </div>
