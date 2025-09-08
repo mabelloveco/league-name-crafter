@@ -13,9 +13,9 @@ export function AdSpace({
 }) {
   // Your real AdSense slot IDs
   const slots: Record<Size, string> = {
-    header:  "5208130349",
-    sidebar: "3412080366",
-    inline:  "2581967004",
+    header:  "5208130349",  // header_728x90_resp
+    sidebar: "3412080366",  // sidebar_300x250_resp
+    inline:  "2581967004",  // inline_300x250_resp
   };
 
   // Reserve space to avoid layout shift
