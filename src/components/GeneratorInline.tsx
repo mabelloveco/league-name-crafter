@@ -1,27 +1,55 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { teamNames, TeamNameCategory } from "@/data/teamNames";
 import { Copy, RefreshCw, Zap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function GeneratorInline() {
-  const [selectedCategory, setSelectedCategory] = useState<TeamNameCategory>("funny");
+  const [selectedCategory, setSelectedCategory] =
+    useState<TeamNameCategory>("funny");
   const [generatedName, setGeneratedName] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [keyword, setKeyword] = useState("");
   const { toast } = useToast();
 
   const categories = [
-    { key: "funny" as TeamNameCategory, label: "Funny", description: "Hilarious puns and wordplay" },
-    { key: "inappropriate" as TeamNameCategory, label: "Inappropriate", description: "Edgy and bold names" },
-    { key: "playerThemed" as TeamNameCategory, label: "Player-Themed", description: "Based on NFL stars" },
-    { key: "popCulture" as TeamNameCategory, label: "Pop Culture", description: "Movies, TV, and trends" },
+    {
+      key: "funny" as TeamNameCategory,
+      label: "Funny",
+      description: "Hilarious puns and wordplay",
+    },
+    {
+      key: "inappropriate" as TeamNameCategory,
+      label: "Inappropriate",
+      description: "Edgy and bold names",
+    },
+    {
+      key: "playerThemed" as TeamNameCategory,
+      label: "Player-Themed",
+      description: "Based on NFL stars",
+    },
+    {
+      key: "popCulture" as TeamNameCategory,
+      label: "Pop Culture",
+      description: "Movies, TV, and trends",
+    },
   ];
 
   const templates: Array<(k: string) => string> = [
-    (k) => `${k} Dynasty`, (k) => `${k} Blitz`, (k) => `${k} Fanatics`,
-    (k) => `Run ${k}`, (k) => `${k} Thunder`, (k) => `${k} Legends`, (k) => `${k} Express`,
+    (k) => `${k} Dynasty`,
+    (k) => `${k} Blitz`,
+    (k) => `${k} Fanatics`,
+    (k) => `Run ${k}`,
+    (k) => `${k} Thunder`,
+    (k) => `${k} Legends`,
+    (k) => `${k} Express`,
   ];
 
   const generateRandomName = () => {
@@ -43,9 +71,16 @@ export default function GeneratorInline() {
     if (!generatedName) return;
     try {
       await navigator.clipboard.writeText(generatedName);
-      toast({ title: "Copied!", description: "Team name copied to clipboard" });
+      toast({
+        title: "Copied!",
+        description: "Team name copied to clipboard",
+      });
     } catch {
-      toast({ title: "Copy failed", description: "Try selecting and copying manually", variant: "destructive" });
+      toast({
+        title: "Copy failed",
+        description: "Try selecting and copying manually",
+        variant: "destructive",
+      });
     }
   };
 
@@ -53,9 +88,13 @@ export default function GeneratorInline() {
     <Card className="mb-8">
       <CardHeader className="text-center">
         <CardTitle className="text-2xl font-bold">Generate a Team Name</CardTitle>
-        <CardDescription>Pick a style or add a keyword, then generate</CardDescription>
+        <CardDescription>
+          Pick a style or add a keyword, then generate
+        </CardDescription>
       </CardHeader>
+
       <CardContent className="space-y-6">
+        {/* Personalize */}
         <div>
           <h3 className="text-lg font-semibold mb-2">Personalize (optional)</h3>
           <input
@@ -70,6 +109,7 @@ export default function GeneratorInline() {
           </p>
         </div>
 
+        {/* Categories */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Choose Your Style</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -87,30 +127,57 @@ export default function GeneratorInline() {
           </div>
         </div>
 
+        {/* Generate button */}
         <div className="text-center">
           <Button
-            variant="hero"
+            variant="default"
             size="lg"
             onClick={generateRandomName}
             disabled={isGenerating}
-            className="text-lg px-8 py-6 h-auto"
+            className="text-base px-6 py-5 h-auto"
           >
-            {isGenerating ? (<><RefreshCw className="mr-2 h-5 w-5 animate-spin" />Generating...</>) : (<><Zap className="mr-2 h-5 w-5" />Generate Team Name</>)}
+            {isGenerating ? (
+              <>
+                <RefreshCw className="mr-2 h-5 w-5 animate-spin" />
+                Generating...
+              </>
+            ) : (
+              <>
+                <Zap className="mr-2 h-5 w-5" />
+                Generate Team Name
+              </>
+            )}
           </Button>
         </div>
 
+        {/* Result */}
         {generatedName && (
           <div className="text-center space-y-4">
             <div className="bg-gradient-accent rounded-lg p-6 border-2 border-primary/20">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Your Team Name:</h2>
-              <p className="text-3xl md:text-4xl font-black text-primary break-words">{generatedName}</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Your Team Name:
+              </h2>
+              <p className="text-3xl md:text-4xl font-black text-primary break-words">
+                {generatedName}
+              </p>
             </div>
+
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button variant="secondary" onClick={copyToClipboard} className="flex items-center">
-                <Copy className="mr-2 h-4 w-4" /> Copy Name
+              <Button
+                variant="secondary"
+                onClick={copyToClipboard}
+                className="flex items-center"
+              >
+                <Copy className="mr-2 h-4 w-4" />
+                Copy Name
               </Button>
-              <Button variant="outline" onClick={generateRandomName} disabled={isGenerating}>
-                <RefreshCw className="mr-2 h-4 w-4" /> Generate Another
+              <Button
+                variant="outline"
+                onClick={generateRandomName}
+                disabled={isGenerating}
+              >
+                <RefreshCw className="mr-2 h-4 w-4" />
+                Generate Another
               </Button>
             </div>
           </div>
