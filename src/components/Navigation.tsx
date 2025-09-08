@@ -7,14 +7,16 @@ export const Navigation = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  const navItems = [
-    { path: "/", label: "Home" },
-    { path: "/generator", label: "Generator" },
-    { path: "/funny-names", label: "Funny Names" },
-    { path: "/inappropriate-names", label: "Inappropriate Names" },
-    { path: "/player-themed-names", label: "Player Names" },
-    { path: "/pop-culture-names", label: "Pop Culture" },
-  ];
+  // replace the "Generator" item with FAQ
+const navItems = [
+  { path: "/", label: "Home" },
+  { path: "/faq", label: "FAQ" },               // ← was /generator
+  { path: "/funny-names", label: "Funny Names" },
+  { path: "/inappropriate-names", label: "Inappropriate Names" },
+  { path: "/player-themed-names", label: "Player Names" },
+  { path: "/pop-culture-names", label: "Pop Culture" },
+];
+
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
