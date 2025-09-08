@@ -9,7 +9,7 @@ import { Footer } from "@/components/Footer";
 
 // Pages
 import HomePage from "./pages/HomePage";
-import FAQ from "./pages/FAQ"; // FAQ replaces Generator
+import FAQ from "./pages/FAQ"; // ✅ new FAQ page
 import FunnyNames from "./pages/FunnyNames";
 import InappropriateNames from "./pages/InappropriateNames";
 import PlayerThemedNames from "./pages/PlayerThemedNames";
@@ -34,7 +34,7 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<HomePage />} />
 
-                {/* FAQ routes */}
+                {/* FAQ replaces Generator */}
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/generator" element={<Navigate to="/faq" replace />} />
 
@@ -48,7 +48,7 @@ const App = () => (
                 <Route path="/blog" element={<BlogList />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
 
-                {/* Fallback */}
+                {/* Catch-all */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </main>
