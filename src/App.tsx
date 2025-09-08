@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -12,7 +12,6 @@ import FunnyNames from "./pages/FunnyNames";
 import InappropriateNames from "./pages/InappropriateNames";
 import PlayerThemedNames from "./pages/PlayerThemedNames";
 import PopCultureNames from "./pages/PopCultureNames";
-import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -33,8 +32,8 @@ const App = () => (
                 <Route path="/inappropriate-names" element={<InappropriateNames />} />
                 <Route path="/player-themed-names" element={<PlayerThemedNames />} />
                 <Route path="/pop-culture-names" element={<PopCultureNames />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
+                {/* CATCH-ALL: redirect unknown routes to home */}
+                <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </main>
             <Footer />
@@ -46,3 +45,4 @@ const App = () => (
 );
 
 export default App;
+
