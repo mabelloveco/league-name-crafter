@@ -9,7 +9,7 @@ import { Footer } from "@/components/Footer";
 
 // Pages
 import HomePage from "./pages/HomePage";
-import FAQ from "./pages/FAQ"; // ✅ new FAQ page
+import FAQ from "./pages/FAQ"; // FAQ replaces Generator
 import FunnyNames from "./pages/FunnyNames";
 import InappropriateNames from "./pages/InappropriateNames";
 import PlayerThemedNames from "./pages/PlayerThemedNames";
@@ -34,20 +34,21 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<HomePage />} />
 
-                {/* ✅ FAQ replaces Generator */}
+                {/* FAQ routes */}
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/generator" element={<Navigate to="/faq" replace />} />
 
+                {/* Name pages */}
                 <Route path="/funny-names" element={<FunnyNames />} />
                 <Route path="/inappropriate-names" element={<InappropriateNames />} />
                 <Route path="/player-themed-names" element={<PlayerThemedNames />} />
                 <Route path="/pop-culture-names" element={<PopCultureNames />} />
 
-                {/* ✅ Blog routes */}
+                {/* Blog */}
                 <Route path="/blog" element={<BlogList />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
 
-                {/* Catch-all → home */}
+                {/* Fallback */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </main>
