@@ -9,13 +9,13 @@ export function AdSpace({
 }: {
   size: Size;
   className?: string;
-  test?: boolean; // set true until AdSense approval
+  test?: boolean; // keep true until AdSense approval
 }) {
-  // Map your AdSense slot IDs here (from AdSense → Ad units)
+  // Your real AdSense slot IDs
   const slots: Record<Size, string> = {
-    header:  "REPLACE_WITH_HEADER_SLOT_ID",
-    sidebar: "REPLACE_WITH_SIDEBAR_SLOT_ID",
-    inline:  "REPLACE_WITH_INLINE_SLOT_ID",
+    header:  "5208130349",
+    sidebar: "3412080366",
+    inline:  "2581967004",
   };
 
   // Reserve space to avoid layout shift
@@ -49,3 +49,4 @@ export function AdSpace({
 }
 
 export default AdSpace;
+
