@@ -4,27 +4,26 @@ type Size = "header" | "sidebar" | "inline";
 
 export function AdSpace({
   size,
-  className,
+  className = "",
   test = false,
+  reserve = true, // reserve space (desktop), collapsible on mobile
 }: {
   size: Size;
   className?: string;
-  test?: boolean; // keep true until AdSense approval
+  test?: boolean;
+  reserve?: boolean;
 }) {
-  // Your real AdSense slot IDs
   const slots: Record<Size, string> = {
-    header:  "5208130349",  // header_728x90_resp
-    sidebar: "3412080366",  // sidebar_300x250_resp
-    inline:  "2581967004",  // inline_300x250_resp
+    header:  "5208130349",
+    sidebar: "3412080366",
+    inline:  "2581967004",
   };
 
-  // Reserve space to avoid layout shift
-  const wrapperStyle =
+  // Responsive reserved height classes
+  const reserveCls =
     size === "header"
-      ? { minHeight: 90 }
-      : size === "sidebar"
-      ? { minHeight: 250 }
-      : { minHeight: 250 };
+      ? "min-h-[40px] md:min-h-[90px]"
+      : "min-h-0 sm:min-h-[180px] md:min-h-[250px]";
 
   useEffect(() => {
     try {
@@ -34,7 +33,7 @@ export function AdSpace({
   }, [size]);
 
   return (
-    <div className={className} style={wrapperStyle}>
+    <div className={`${reserve ? reserveCls : ""} ${className}`}>
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
@@ -49,4 +48,3 @@ export function AdSpace({
 }
 
 export default AdSpace;
-
