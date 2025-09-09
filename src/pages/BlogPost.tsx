@@ -65,7 +65,7 @@ const BlogPost = () => {
 
         {/* Internal CTAs for key queries */}
         <div className="mb-6 flex flex-wrap gap-3">
-          <Link to="/generator"><Button size="sm" variant="secondary">Use the Name Generator</Button></Link>
+          <Link to="/"><Button size="sm" variant="secondary">Use the Name Generator</Button></Link>
           <Link to="/funny-names"><Button size="sm" variant="outline">Funny Names</Button></Link>
           <Link to="/inappropriate-names"><Button size="sm" variant="outline">Inappropriate</Button></Link>
         </div>

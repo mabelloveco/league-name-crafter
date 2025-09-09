@@ -91,7 +91,7 @@ const PopCultureNames = () => {
                   Blend your love of football with movies, TV shows, music, and trending culture. These names create 
                   perfect mashups that show you're connected to both sports and entertainment worlds.
                 </p>
-                <Link to="/generator">
+                <Link to="/">
                   <Button variant="hero" size="lg">
                     <Zap className="mr-2 h-5 w-5" />
                     Generate Random Pop Culture Name
