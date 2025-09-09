@@ -24,22 +24,22 @@ export const Footer = () => {
             <h3 className="font-semibold mb-4 text-foreground">Team Names</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/funny-names" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/funny-names" className="text-muted-foreground hover:text-primary">
                   Funny Names
                 </Link>
               </li>
               <li>
-                <Link to="/inappropriate-names" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/inappropriate-names" className="text-muted-foreground hover:text-primary">
                   Inappropriate Names
                 </Link>
               </li>
               <li>
-                <Link to="/player-themed-names" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/player-themed-names" className="text-muted-foreground hover:text-primary">
                   Player-Themed Names
                 </Link>
               </li>
               <li>
-                <Link to="/pop-culture-names" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/pop-culture-names" className="text-muted-foreground hover:text-primary">
                   Pop Culture Names
                 </Link>
               </li>
@@ -51,27 +51,27 @@ export const Footer = () => {
             <h3 className="font-semibold mb-4 text-foreground">Tools</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/generator" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/generator" className="text-muted-foreground hover:text-primary">
                   Name Generator
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/about" className="text-muted-foreground hover:text-primary">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/terms" className="text-muted-foreground hover:text-primary">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/contact" className="text-muted-foreground hover:text-primary">
                   Contact
                 </Link>
               </li>

@@ -153,11 +153,11 @@ const PlayerThemedNames = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {nameChunks.map((chunk, chunkIndex) => (
-                    <Card key={chunkIndex} className="hover:shadow-lg transition-shadow duration-200">
+                    <Card key={chunkIndex} className="">
                       <CardContent className="p-6">
                         <div className="space-y-3">
                           {chunk.map((name, index) => (
-                            <div key={index} className="flex items-center justify-between p-3 bg-accent/30 rounded-lg hover:bg-accent/50 transition-colors">
+                            <div key={index} className="flex items-center justify-between p-3 bg-accent/30 rounded-lg hover:bg-accent/50">
                               <span className="font-medium text-foreground">{name}</span>
                               <Button
                                 variant="ghost"
