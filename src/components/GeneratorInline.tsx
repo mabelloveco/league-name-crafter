@@ -10,6 +10,19 @@ export default function GeneratorInline() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [keyword, setKeyword] = useState("");
 
+  // Expanded pool of ideas for the "Give me more ideas" functionality
+  const allIdeas = [
+    "Mahomes", "Swifties", "Touchdown", "Blitz", "Dynasty", "Thunder", "Express",
+    "Brady", "Rodgers", "Allen", "Lamar", "Wilson", "Burrow", "Herbert",
+    "Chiefs", "Bills", "Cowboys", "Packers", "Ravens", "Bengals", "Chargers",
+    "Fantasy", "Draft", "Waiver", "Playoff", "Championship", "Victory",
+    "Gridiron", "Endzone", "Fumble", "Interception", "Sack", "Rush",
+    "Beast", "Savage", "Elite", "Legendary", "Unstoppable", "Dominant",
+    "Pigskin", "Helmet", "Cleats", "Jersey", "Stadium", "Huddle"
+  ];
+
+  const [currentIdeas, setCurrentIdeas] = useState(["Mahomes", "Swifties", "Touchdown", "Blitz"]);
+
   const templates: Array<(k: string) => string> = [
     (k) => `${k} Dynasty`,
     (k) => `${k} Blitz`,
@@ -33,6 +46,14 @@ export default function GeneratorInline() {
       }
       setIsGenerating(false);
     }, 300);
+  };
+
+  const refreshIdeas = () => {
+    // Get 4 random ideas from the pool, ensuring they're different from current ones
+    const availableIdeas = allIdeas.filter(idea => !currentIdeas.includes(idea));
+    const shuffled = [...availableIdeas].sort(() => 0.5 - Math.random());
+    const newIdeas = shuffled.slice(0, 4);
+    setCurrentIdeas(newIdeas);
   };
 
   return (
@@ -79,7 +100,7 @@ export default function GeneratorInline() {
 
         {/* Compact ideas section */}
         <div className="bg-muted/30 px-4 py-3 text-sm flex flex-wrap gap-2 justify-center">
-          {["Mahomes", "Swifties", "Touchdown", "Blitz"].map((idea) => (
+          {currentIdeas.map((idea) => (
             <button
               key={idea}
               onClick={() => setKeyword(idea)}
@@ -88,6 +109,12 @@ export default function GeneratorInline() {
               {idea}
             </button>
           ))}
+          <button
+            onClick={refreshIdeas}
+            className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary/20 transition font-medium"
+          >
+            Give me more ideas
+          </button>
         </div>
       </CardContent>
     </Card>
