@@ -74,7 +74,7 @@ export default function GeneratorInline() {
           >
             {isGenerating ? (
               <>
-                <RefreshCw className="mr-2 h-5 w-5 animate-spin" />
+                <RefreshCw className="mr-2 h-5 w-5 " />
                 Generating...
               </>
             ) : (
@@ -111,7 +111,7 @@ export default function GeneratorInline() {
           ))}
           <button
             onClick={refreshIdeas}
-            className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary/20 transition font-medium"
+            className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary/20 font-medium"
           >
             Give me more ideas
           </button>
