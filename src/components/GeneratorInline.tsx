@@ -36,29 +36,29 @@ export default function GeneratorInline() {
   };
 
   return (
-    <Card className="w-full max-w-3xl mx-auto shadow-lg border rounded-2xl overflow-hidden">
+    <Card className="w-full max-w-4xl mx-auto shadow-lg border-2 border-primary/40 rounded-2xl overflow-hidden">
       <CardContent className="p-0">
         {/* Chat-style input */}
-        <div className="flex items-center bg-background border-b px-4 py-3">
+        <div className="flex items-center bg-background border-b border-primary/20 px-6 py-4">
           <input
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="Type a player, word, or idea..."
-            className="flex-1 rounded-md border px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="flex-1 rounded-md border border-primary/30 px-5 py-4 text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
           />
           <Button
             onClick={generateRandomName}
             disabled={isGenerating}
-            className="ml-3 px-6 py-3 text-base font-semibold bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+            className="ml-4 px-8 py-4 text-lg font-semibold bg-primary text-white rounded-lg hover:bg-primary/90 transition"
           >
             {isGenerating ? (
               <>
-                <RefreshCw className="mr-2 h-5 w-5 animate-spin" />
+                <RefreshCw className="mr-2 h-6 w-6 animate-spin" />
                 Generating...
               </>
             ) : (
               <>
-                <Zap className="mr-2 h-5 w-5" />
+                <Zap className="mr-2 h-6 w-6" />
                 Generate
               </>
             )}
@@ -67,23 +67,23 @@ export default function GeneratorInline() {
 
         {/* Result */}
         {generatedName && (
-          <div className="px-6 py-6 text-center">
-            <h2 className="text-lg font-medium text-muted-foreground mb-2">
+          <div className="px-8 py-8 text-center">
+            <h2 className="text-xl font-medium text-muted-foreground mb-3">
               Your Team Name:
             </h2>
-            <p className="text-3xl md:text-4xl font-bold text-primary break-words">
+            <p className="text-4xl md:text-5xl font-bold text-primary break-words">
               {generatedName}
             </p>
           </div>
         )}
 
         {/* Compact ideas section */}
-        <div className="bg-muted/30 px-4 py-3 text-sm flex flex-wrap gap-2 justify-center">
+        <div className="bg-muted/30 px-6 py-4 text-base flex flex-wrap gap-3 justify-center">
           {["Mahomes", "Swifties", "Touchdown", "Blitz"].map((idea) => (
             <button
               key={idea}
               onClick={() => setKeyword(idea)}
-              className="px-3 py-1 rounded-full bg-white border text-muted-foreground hover:bg-primary/10 transition"
+              className="px-4 py-2 rounded-full bg-white border border-primary/30 text-muted-foreground hover:bg-primary/10 hover:border-primary/50 transition"
             >
               {idea}
             </button>
