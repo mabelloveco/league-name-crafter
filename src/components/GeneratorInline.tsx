@@ -70,11 +70,11 @@ export default function GeneratorInline() {
           <Button
             onClick={generateRandomName}
             disabled={isGenerating}
-            className="ml-3 px-6 py-3 text-base font-semibold bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+            className="ml-3 px-6 py-3 text-base font-semibold bg-primary text-white rounded-lg hover:bg-primary/90"
           >
             {isGenerating ? (
               <>
-                <RefreshCw className="mr-2 h-5 w-5 animate-spin" />
+                <RefreshCw className="mr-2 h-5 w-5" />
                 Generating...
               </>
             ) : (
@@ -104,14 +104,14 @@ export default function GeneratorInline() {
             <button
               key={idea}
               onClick={() => setKeyword(idea)}
-              className="px-3 py-1 rounded-full bg-white border text-muted-foreground hover:bg-primary/10 transition"
+              className="px-3 py-1 rounded-full bg-white border text-muted-foreground hover:bg-primary/10"
             >
               {idea}
             </button>
           ))}
           <button
             onClick={refreshIdeas}
-            className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary/20 transition font-medium"
+            className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary/20 font-medium"
           >
             Give me more ideas
           </button>

@@ -62,7 +62,7 @@ const HomePage = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Link to="/funny-names">
-                <Card className="text-center hover:shadow-lg transition-shadow cursor-pointer">
+                <Card className="text-center cursor-pointer">
                   <CardHeader>
                     <Trophy className="w-12 h-12 mx-auto text-primary mb-4" />
                     <CardTitle>Funny Names</CardTitle>
@@ -71,7 +71,7 @@ const HomePage = () => {
                 </Card>
               </Link>
               <Link to="/inappropriate-names">
-                <Card className="text-center hover:shadow-lg transition-shadow cursor-pointer">
+                <Card className="text-center cursor-pointer">
                   <CardHeader>
                     <Star className="w-12 h-12 mx-auto text-secondary mb-4" />
                     <CardTitle>Inappropriate Names</CardTitle>
@@ -80,7 +80,7 @@ const HomePage = () => {
                 </Card>
               </Link>
               <Link to="/player-themed-names">
-                <Card className="text-center hover:shadow-lg transition-shadow cursor-pointer">
+                <Card className="text-center cursor-pointer">
                   <CardHeader>
                     <Users className="w-12 h-12 mx-auto text-primary mb-4" />
                     <CardTitle>Player-Themed</CardTitle>
@@ -89,7 +89,7 @@ const HomePage = () => {
                 </Card>
               </Link>
               <Link to="/pop-culture-names">
-                <Card className="text-center hover:shadow-lg transition-shadow cursor-pointer">
+                <Card className="text-center cursor-pointer">
                   <CardHeader>
                     <Zap className="w-12 h-12 mx-auto text-secondary mb-4" />
                     <CardTitle>Pop Culture</CardTitle>
