@@ -1,24 +1,14 @@
-# Welcome to your Lovable project
+# League Name Crafter
 
-## Project info
+A fantasy football team name generator that helps you create the perfect team name for your league. Generate names across multiple categories including funny, inappropriate, player-themed, and pop culture references.
 
-**URL**: https://lovable.dev/projects/b118466b-391f-47a4-8c9e-94243736c4c9
+## How to contribute
 
-## How can I edit this code?
+There are several ways to contribute to this project:
 
-There are several ways of editing your application.
+**Development Setup**
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/b118466b-391f-47a4-8c9e-94243736c4c9) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Clone the repository and set up the development environment locally. The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 Follow these steps:
 
@@ -62,12 +52,10 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/b118466b-391f-47a4-8c9e-94243736c4c9) and click on Share -> Publish.
+This project is configured for deployment on Netlify. You can deploy it by:
 
-## Can I connect a custom domain to my Lovable project?
+1. **Connecting to Netlify**: Link your GitHub repository to Netlify for automatic deployments
+2. **Manual deployment**: Build the project locally with `npm run build` and upload the `dist` folder
+3. **Other platforms**: The built application can be deployed to any static hosting service (Vercel, GitHub Pages, etc.)
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
