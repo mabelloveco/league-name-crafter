@@ -18,7 +18,7 @@ const BlogList = () => {
 
         {/* Top topics for internal linking */}
         <div className="mb-8 flex flex-wrap gap-2 text-sm">
-          <Link to="/generator" className="underline">team name generator</Link>
+          <Link to="/" className="underline">team name generator</Link>
           <Link to="/funny-names" className="underline">funny team names</Link>
           <Link to="/inappropriate-names" className="underline">inappropriate team names</Link>
           <Link to="/player-themed-names" className="underline">player-themed</Link>

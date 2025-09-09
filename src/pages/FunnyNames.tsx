@@ -74,7 +74,7 @@ const FunnyNames = () => {
                   Get ready to dominate your league with laughter! These hilarious team names combine clever wordplay, 
                   football puns, and pure comedic genius. Your opponents will be laughing so hard, they'll forget to set their lineups.
                 </p>
-                <Link to="/generator">
+                <Link to="/">
                   <Button variant="hero" size="lg">
                     <Zap className="mr-2 h-5 w-5" />
                     Generate Random Funny Name

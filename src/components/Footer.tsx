@@ -51,7 +51,7 @@ export const Footer = () => {
             <h3 className="font-semibold mb-4 text-foreground">Tools</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/generator" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Name Generator
                 </Link>
               </li>

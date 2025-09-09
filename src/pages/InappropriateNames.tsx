@@ -73,7 +73,7 @@ const InappropriateNames = () => {
                   For leagues that aren't afraid to push boundaries. These edgy team names bring bold humor 
                   and unforgettable personality to your fantasy football experience. Use with discretion!
                 </p>
-                <Link to="/generator">
+                <Link to="/">
                   <Button variant="hero" size="lg">
                     <Zap className="mr-2 h-5 w-5" />
                     Generate Random Inappropriate Name

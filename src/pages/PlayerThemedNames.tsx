@@ -83,7 +83,7 @@ const PlayerThemedNames = () => {
                   Show your football knowledge with team names inspired by NFL superstars. From clever puns on player names 
                   to references that showcase your fandom, these names prove you know the game inside and out.
                 </p>
-                <Link to="/generator">
+                <Link to="/">
                   <Button variant="hero" size="lg">
                     <Zap className="mr-2 h-5 w-5" />
                     Generate Random Player Name
