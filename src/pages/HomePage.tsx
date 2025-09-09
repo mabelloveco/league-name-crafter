@@ -61,28 +61,28 @@ const HomePage = () => {
         <section className="py-10 md:py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="text-center hover:shadow-lg transition-shadow">
+              <Card className="text-center">
                 <CardHeader>
                   <Trophy className="w-12 h-12 mx-auto text-primary mb-4" />
                   <CardTitle>Funny Names</CardTitle>
                   <CardDescription>Hilarious puns and clever wordplay that'll have your league laughing</CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="text-center hover:shadow-lg transition-shadow">
+              <Card className="text-center">
                 <CardHeader>
                   <Star className="w-12 h-12 mx-auto text-secondary mb-4" />
                   <CardTitle>Inappropriate Names</CardTitle>
                   <CardDescription>Edgy and bold names for leagues that aren't afraid to push boundaries</CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="text-center hover:shadow-lg transition-shadow">
+              <Card className="text-center">
                 <CardHeader>
                   <Users className="w-12 h-12 mx-auto text-primary mb-4" />
                   <CardTitle>Player-Themed</CardTitle>
                   <CardDescription>Creative names based on your favorite NFL stars and personalities</CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="text-center hover:shadow-lg transition-shadow">
+              <Card className="text-center">
                 <CardHeader>
                   <Zap className="w-12 h-12 mx-auto text-secondary mb-4" />
                   <CardTitle>Pop Culture</CardTitle>
