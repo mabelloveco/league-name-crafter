@@ -57,38 +57,16 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Features */}
-        <section className="py-10 md:py-16 bg-background">
+        {/* Quick Overview - Reduced size */}
+        <section className="py-6 md:py-8 bg-background">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Trophy className="w-12 h-12 mx-auto text-primary mb-4" />
-                  <CardTitle>Funny Names</CardTitle>
-                  <CardDescription>Hilarious puns and clever wordplay that'll have your league laughing</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Star className="w-12 h-12 mx-auto text-secondary mb-4" />
-                  <CardTitle>Inappropriate Names</CardTitle>
-                  <CardDescription>Edgy and bold names for leagues that aren't afraid to push boundaries</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Users className="w-12 h-12 mx-auto text-primary mb-4" />
-                  <CardTitle>Player-Themed</CardTitle>
-                  <CardDescription>Creative names based on your favorite NFL stars and personalities</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Zap className="w-12 h-12 mx-auto text-secondary mb-4" />
-                  <CardTitle>Pop Culture</CardTitle>
-                  <CardDescription>Names inspired by movies, TV shows, and trending cultural references</CardDescription>
-                </CardHeader>
-              </Card>
+            <div className="text-center mb-4">
+              <h2 className="text-xl font-semibold text-foreground mb-2">
+                Choose Your Style
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Select a category in the generator above to get started
+              </p>
             </div>
           </div>
         </section>

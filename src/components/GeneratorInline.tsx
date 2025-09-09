@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { teamNames, TeamNameCategory } from "@/data/teamNames";
-import { RefreshCw, Zap } from "lucide-react";
+import { RefreshCw, Zap, Trophy, Star, Users } from "lucide-react";
 
 export default function GeneratorInline() {
-  const [selectedCategory] = useState<TeamNameCategory>("funny");
+  const [selectedCategory, setSelectedCategory] = useState<TeamNameCategory>("funny");
   const [generatedName, setGeneratedName] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [keyword, setKeyword] = useState("");
@@ -34,6 +34,13 @@ export default function GeneratorInline() {
       setIsGenerating(false);
     }, 300);
   };
+
+  const categories = [
+    { key: 'funny' as TeamNameCategory, label: 'Funny', icon: Trophy, description: 'Hilarious puns and wordplay' },
+    { key: 'inappropriate' as TeamNameCategory, label: 'Inappropriate', icon: Star, description: 'Edgy and bold names' },
+    { key: 'playerThemed' as TeamNameCategory, label: 'Player-Themed', icon: Users, description: 'Based on NFL stars' },
+    { key: 'popCulture' as TeamNameCategory, label: 'Pop Culture', icon: Zap, description: 'Movies, TV, trends' },
+  ];
 
   return (
     <Card className="w-full max-w-3xl mx-auto shadow-lg border rounded-2xl overflow-hidden">
@@ -88,6 +95,34 @@ export default function GeneratorInline() {
               {idea}
             </button>
           ))}
+        </div>
+
+        {/* Category Selection - New compact layout */}
+        <div className="border-t bg-background px-4 py-4">
+          <p className="text-sm text-muted-foreground mb-3 text-center">Choose a category:</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+            {categories.map((category) => {
+              const Icon = category.icon;
+              const isSelected = selectedCategory === category.key;
+              return (
+                <button
+                  key={category.key}
+                  onClick={() => setSelectedCategory(category.key)}
+                  className={`p-3 rounded-lg border text-left transition-colors hover:bg-muted/50 ${
+                    isSelected 
+                      ? 'border-primary bg-primary/5 text-primary' 
+                      : 'border-border bg-background text-muted-foreground'
+                  }`}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <Icon className="w-4 h-4" />
+                    <span className="font-medium text-sm">{category.label}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground">{category.description}</p>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </CardContent>
     </Card>
