@@ -82,26 +82,6 @@ const FunnyNames = () => {
                 </Link>
               </div>
 
-              {/* Why Funny Names Work */}
-              <Card className="mb-8">
-                <CardHeader>
-                  <CardTitle>Why Funny Team Names Win</CardTitle>
-                </CardHeader>
-                <CardContent className="prose prose-lg max-w-none">
-                  <p className="text-muted-foreground">
-                    A funny team name is the ultimate icebreaker in any fantasy football league. It sets a lighthearted tone, 
-                    makes trash talking more enjoyable, and creates memorable moments that last long after the season ends. 
-                    The best funny names often combine football terminology with unexpected twists, creating that perfect "groan-worthy" 
-                    pun that everyone secretly loves.
-                  </p>
-                  <p className="text-muted-foreground mt-4">
-                    Whether you're going for dad jokes, clever wordplay, or absurd humor, a great funny name shows you don't 
-                    take yourself too seriously while still being competitive. Remember: the goal is to make people smile, 
-                    not to be the funniest person in the room. Sometimes the best laughs come from the most unexpected places!
-                  </p>
-                </CardContent>
-              </Card>
-
               {/* Name Grid */}
               <div className="space-y-8">
                 <h2 className="text-3xl font-bold text-center text-foreground">
@@ -159,6 +139,26 @@ const FunnyNames = () => {
                       </ul>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+
+              {/* Why Funny Names Work */}
+              <Card className="mt-12">
+                <CardHeader>
+                  <CardTitle>Why Funny Team Names Win</CardTitle>
+                </CardHeader>
+                <CardContent className="prose prose-lg max-w-none">
+                  <p className="text-muted-foreground">
+                    A funny team name is the ultimate icebreaker in any fantasy football league. It sets a lighthearted tone, 
+                    makes trash talking more enjoyable, and creates memorable moments that last long after the season ends. 
+                    The best funny names often combine football terminology with unexpected twists, creating that perfect "groan-worthy" 
+                    pun that everyone secretly loves.
+                  </p>
+                  <p className="text-muted-foreground mt-4">
+                    Whether you're going for dad jokes, clever wordplay, or absurd humor, a great funny name shows you don't 
+                    take yourself too seriously while still being competitive. Remember: the goal is to make people smile, 
+                    not to be the funniest person in the room. Sometimes the best laughs come from the most unexpected places!
+                  </p>
                 </CardContent>
               </Card>
             </div>
