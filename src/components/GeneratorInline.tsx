@@ -39,30 +39,32 @@ export default function GeneratorInline() {
     <Card className="w-full max-w-3xl mx-auto shadow-lg border rounded-2xl overflow-hidden">
       <CardContent className="p-0">
         {/* Chat-style input */}
-        <div className="flex items-center bg-background border-b px-4 py-3">
+        <div className="bg-background border-b px-4 py-3 space-y-3">
           <input
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="Type a player, word, or idea..."
-            className="flex-1 rounded-md border px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-md border px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-primary"
           />
-          <Button
-            onClick={generateRandomName}
-            disabled={isGenerating}
-            className="ml-3 px-6 py-3 text-base font-semibold bg-primary text-white rounded-lg hover:bg-primary/90 transition"
-          >
-            {isGenerating ? (
-              <>
-                <RefreshCw className="mr-2 h-5 w-5 animate-spin" />
-                Generating...
-              </>
-            ) : (
-              <>
-                <Zap className="mr-2 h-5 w-5" />
-                Generate
-              </>
-            )}
-          </Button>
+          <div className="flex justify-center">
+            <Button
+              onClick={generateRandomName}
+              disabled={isGenerating}
+              className="px-6 py-3 text-base font-semibold bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+            >
+              {isGenerating ? (
+                <>
+                  <RefreshCw className="mr-2 h-5 w-5 animate-spin" />
+                  Generating...
+                </>
+              ) : (
+                <>
+                  <Zap className="mr-2 h-5 w-5" />
+                  Generate
+                </>
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* Result */}
