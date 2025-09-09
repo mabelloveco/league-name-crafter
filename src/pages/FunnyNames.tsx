@@ -208,7 +208,7 @@ const FunnyNames = () => {
 
           {/* Inline Ad */}
           <div className="flex justify-center mt-12">
-            <AdSpace size="inline" />
+            <AdSpace size="inline" reserve={false} />
           </div>
         </div>
       </div>
