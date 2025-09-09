@@ -33,12 +33,12 @@ const HomePage = () => {
 
       <div className="min-h-screen">
         {/* Header Ad (no reserve so it won't leave gaps until ads serve) */}
-        <div className="w-full flex justify-center py-3 bg-gradient-field">
+        <div className="w-full flex justify-center py-3 bg-muted">
           <AdSpace size="header" reserve={false} />
         </div>
 
         {/* HERO + GENERATOR */}
-        <section className="relative py-12 md:py-16 bg-gradient-field">
+        <section className="relative py-12 md:py-16 bg-muted">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-5xl mx-auto">
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 md:mb-6">
