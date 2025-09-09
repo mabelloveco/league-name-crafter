@@ -130,13 +130,8 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Inline Ad at bottom */}
-        <section className="py-6 md:py-8 bg-background">
-          <div className="container mx-auto px-4 text-center">
-            {/* Collapse until ads go live */}
-            <AdSpace size="inline" reserve={false} className="mx-auto" />
-          </div>
-        </section>
+        {/* Inline Ad at bottom - removed section padding when ad is collapsed */}
+        <AdSpace size="inline" reserve={false} className="mx-auto" />
       </div>
     </>
   );
