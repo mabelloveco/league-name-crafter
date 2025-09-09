@@ -36,29 +36,30 @@ export default function GeneratorInline() {
   };
 
   return (
-    <Card className="w-full max-w-3xl mx-auto shadow-lg border rounded-2xl overflow-hidden">
+    <Card className="w-full max-w-5xl mx-auto shadow-2xl border-2 rounded-3xl overflow-hidden backdrop-blur-sm bg-white/95">
       <CardContent className="p-0">
-        {/* Chat-style input */}
-        <div className="flex items-center bg-background border-b px-4 py-3">
+        {/* Modern chat-style input */}
+        <div className="flex flex-col sm:flex-row items-stretch bg-gradient-to-r from-background to-muted/30 border-b px-6 py-6 gap-4">
           <input
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="Type a player, word, or idea..."
-            className="flex-1 rounded-md border px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="flex-1 rounded-2xl border-2 px-6 py-4 text-lg md:text-xl lg:text-2xl font-medium focus:outline-none focus:ring-4 focus:ring-primary/30 focus:border-primary transition-all duration-300 shadow-inner bg-white/80"
           />
           <Button
             onClick={generateRandomName}
             disabled={isGenerating}
-            className="ml-3 px-6 py-3 text-base font-semibold bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+            className="px-6 py-4 sm:px-8 sm:py-4 md:px-10 md:py-5 lg:px-12 lg:py-6 text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-primary to-primary/80 text-white rounded-2xl hover:from-primary/90 hover:to-primary/70 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 min-w-[120px] sm:min-w-[140px] md:min-w-[160px]"
           >
             {isGenerating ? (
               <>
-                <RefreshCw className="mr-2 h-5 w-5 animate-spin" />
-                Generating...
+                <RefreshCw className="mr-2 h-5 w-5 md:h-6 md:w-6 animate-spin" />
+                <span className="hidden sm:inline">Generating...</span>
+                <span className="sm:hidden">...</span>
               </>
             ) : (
               <>
-                <Zap className="mr-2 h-5 w-5" />
+                <Zap className="mr-2 h-5 w-5 md:h-6 md:w-6" />
                 Generate
               </>
             )}
@@ -67,23 +68,24 @@ export default function GeneratorInline() {
 
         {/* Result */}
         {generatedName && (
-          <div className="px-6 py-6 text-center">
-            <h2 className="text-lg font-medium text-muted-foreground mb-2">
+          <div className="px-8 py-8 text-center bg-gradient-to-br from-primary/5 to-secondary/5">
+            <h2 className="text-xl font-semibold text-muted-foreground mb-4">
               Your Team Name:
             </h2>
-            <p className="text-3xl md:text-4xl font-bold text-primary break-words">
+            <p className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent break-words leading-tight">
               {generatedName}
             </p>
           </div>
         )}
 
-        {/* Compact ideas section */}
-        <div className="bg-muted/30 px-4 py-3 text-sm flex flex-wrap gap-2 justify-center">
+        {/* Enhanced ideas section */}
+        <div className="bg-gradient-to-r from-muted/40 to-muted/20 px-6 py-4 text-sm flex flex-wrap gap-3 justify-center border-t">
+          <span className="text-muted-foreground font-medium hidden sm:inline">Try these ideas:</span>
           {["Mahomes", "Swifties", "Touchdown", "Blitz"].map((idea) => (
             <button
               key={idea}
               onClick={() => setKeyword(idea)}
-              className="px-3 py-1 rounded-full bg-white border text-muted-foreground hover:bg-primary/10 transition"
+              className="px-4 py-2 rounded-full bg-white/80 border-2 border-primary/20 text-muted-foreground hover:bg-primary/10 hover:border-primary/40 hover:text-primary transition-all duration-200 font-medium shadow-sm hover:shadow-md transform hover:scale-105"
             >
               {idea}
             </button>
