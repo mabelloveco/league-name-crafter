@@ -60,17 +60,17 @@ export default function GeneratorInline() {
     <Card className="w-full max-w-3xl mx-auto shadow-lg border rounded-2xl overflow-hidden">
       <CardContent className="p-0">
         {/* Chat-style input */}
-        <div className="flex items-center bg-background border-b px-4 py-3">
+        <div className="flex items-center bg-background border-b px-3 py-3 sm:px-4 sm:py-3 gap-2 sm:gap-0">
           <input
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="Type a player, word, or idea..."
-            className="flex-1 rounded-md border px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="flex-1 rounded-md border px-3 py-3 sm:px-4 sm:py-3 text-lg md:text-lg focus:outline-none focus:ring-2 focus:ring-primary min-h-[48px] sm:min-h-[44px]"
           />
           <Button
             onClick={generateRandomName}
             disabled={isGenerating}
-            className="ml-3 px-6 py-3 text-base font-semibold bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+            className="ml-2 sm:ml-3 px-4 py-3 sm:px-6 sm:py-3 text-lg md:text-base font-semibold bg-primary text-white rounded-lg hover:bg-primary/90 transition min-h-[48px] sm:min-h-[44px]"
           >
             {isGenerating ? (
               <>
