@@ -15,6 +15,10 @@ import FunnyNames from "./pages/FunnyNames";
 import InappropriateNames from "./pages/InappropriateNames";
 import PlayerThemedNames from "./pages/PlayerThemedNames";
 import PopCultureNames from "./pages/PopCultureNames";
+import About from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+import Contact from "./pages/Contact";
 
 // Blog pages
 import BlogList from "./pages/BlogList";
@@ -44,6 +48,12 @@ const App = () => (
                 <Route path="/inappropriate-names" element={<InappropriateNames />} />
                 <Route path="/player-themed-names" element={<PlayerThemedNames />} />
                 <Route path="/pop-culture-names" element={<PopCultureNames />} />
+
+                {/* Static pages */}
+                <Route path="/about" element={<About />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/contact" element={<Contact />} />
 
                 {/* Blog */}
                 <Route path="/blog" element={<BlogList />} />
