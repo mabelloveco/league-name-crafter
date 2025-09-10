@@ -130,8 +130,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Inline Ad at bottom - removed section padding when ad is collapsed */}
-        <AdSpace size="inline" reserve={false} className="mx-auto" />
+
       </div>
     </>
   );
