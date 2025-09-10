@@ -124,14 +124,17 @@ const HomePage = () => {
                 <div className="sticky top-24 space-y-6">
                   {/* Collapse until ads go live */}
                   <AdSpace size="sidebar" reserve={false} className="mx-auto" />
+                  {/* Placeholder image for sidebar ad */}
+                  <img src="/MediumRectangle.png" alt="Sidebar Ad" width="300" height="250" style={{ display: 'block', margin: '0 auto' }} />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Inline Ad at bottom - removed section padding when ad is collapsed */}
-        <AdSpace size="inline" reserve={false} className="mx-auto" />
+        {/* Inline Ad at bottom - only show if ads are available */}
+  {/* Inline Ad at bottom - placeholder image if no real ad */}
+  <img src="/inline-ad.png" alt="Inline Ad" width="728" height="90" style={{ display: 'block', margin: '32px auto 0 auto' }} />
       </div>
     </>
   );
