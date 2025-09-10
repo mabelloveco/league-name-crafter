@@ -134,7 +134,7 @@ const HomePage = () => {
 
         {/* Inline Ad at bottom - only show if ads are available */}
   {/* Inline Ad at bottom - placeholder image if no real ad */}
-  <img src="/inline-ad.png" alt="Inline Ad" width="728" height="90" style={{ display: 'block', margin: '32px auto 0 auto' }} />
+  <img src="/inlinead.png" alt="Inline Ad" width="728" height="90" style={{ display: 'block', margin: '32px auto 0 auto' }} />
       </div>
     </>
   );
