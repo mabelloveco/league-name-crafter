@@ -81,8 +81,8 @@ export const Footer = () => {
           {/* Ad Space */}
           <div>
             <h3 className="font-semibold mb-4 text-foreground">Advertisement</h3>
-            <div className="w-full h-32 bg-accent/30 border-2 border-dashed border-border rounded-lg flex items-center justify-center">
-              <span className="text-xs text-muted-foreground">300x250 Ad Unit</span>
+            <div className="w-full flex items-center justify-center">
+              <img src="/MediumRectangle.png" alt="Footer Ad" width="300" height="250" style={{ display: 'block', margin: '0 auto' }} />
             </div>
           </div>
         </div>
