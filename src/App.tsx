@@ -15,6 +15,7 @@ import FunnyNames from "./pages/FunnyNames";
 import InappropriateNames from "./pages/InappropriateNames";
 import PlayerThemedNames from "./pages/PlayerThemedNames";
 import PopCultureNames from "./pages/PopCultureNames";
+import BestTeamNames2025 from "./pages/BestTeamNames2025";
 
 // Blog pages
 import BlogList from "./pages/BlogList";
@@ -44,6 +45,7 @@ const App = () => (
                 <Route path="/inappropriate-names" element={<InappropriateNames />} />
                 <Route path="/player-themed-names" element={<PlayerThemedNames />} />
                 <Route path="/pop-culture-names" element={<PopCultureNames />} />
+                  <Route path="/best-team-names-2025" element={<BestTeamNames2025 />} />
 
                 {/* Blog */}
                 <Route path="/blog" element={<BlogList />} />

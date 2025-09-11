@@ -100,6 +100,15 @@ const HomePage = () => {
                   </CardHeader>
                 </Card>
               </Link>
+                <Link to="/best-team-names-2025">
+                  <Card className="text-center hover:shadow-lg transition-shadow cursor-pointer">
+                    <CardHeader>
+                      <Star className="w-12 h-12 mx-auto text-primary mb-4" />
+                      <CardTitle>OP Best Fantasy Football Team Names</CardTitle>
+                      <CardDescription>Discover the top fantasy football team names for 2025</CardDescription>
+                    </CardHeader>
+                  </Card>
+                </Link>
             </div>
           </div>
         </section>
