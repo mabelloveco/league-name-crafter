@@ -27,7 +27,7 @@ const BlogList = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {items.map((p) => (
-            <Card key={p.slug} className="hover:shadow-md transition">
+            <Card key={p.slug} className="hover:shadow-md ">
               <CardHeader>
                 <CardTitle className="text-xl">
                   <Link to={`/blog/${p.slug}`} className="hover:underline">
