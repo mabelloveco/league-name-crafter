@@ -77,14 +77,6 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* Ad Space */}
-          <div>
-            <h3 className="font-semibold mb-4 text-foreground">Advertisement</h3>
-            <div className="w-full flex items-center justify-center">
-              <img src="/MediumRectangle.png" alt="Footer Ad" width="300" height="250" style={{ display: 'block', margin: '0 auto' }} />
-            </div>
-          </div>
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center">

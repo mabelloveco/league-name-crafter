@@ -4,7 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { SEOHead } from "@/components/SEOHead";
 import { AdSpace } from "@/components/AdSpace";
 import GeneratorInline from "@/components/GeneratorInline"; // use inline generator component
-import RssFeedSection from "@/components/RssFeedSection";
 import { Trophy, Zap, Users, Star } from "lucide-react";
 
 const HomePage = () => {
@@ -53,8 +52,6 @@ const HomePage = () => {
               {/* Inline generator inside hero */}
               <div className="max-w-4xl mx-auto">
                 <GeneratorInline />
-                {/* RSS Feed Preview Section */}
-                <RssFeedSection />
               </div>
             </div>
           </div>

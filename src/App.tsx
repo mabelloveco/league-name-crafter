@@ -16,6 +16,10 @@ import InappropriateNames from "./pages/InappropriateNames";
 import PlayerThemedNames from "./pages/PlayerThemedNames";
 import PopCultureNames from "./pages/PopCultureNames";
 import BestTeamNames2025 from "./pages/BestTeamNames2025";
+import About from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+import Contact from "./pages/Contact";
 
 // Blog pages
 import BlogList from "./pages/BlogList";
@@ -50,6 +54,12 @@ const App = () => (
                 {/* Blog */}
                 <Route path="/blog" element={<BlogList />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
+
+                {/* Legal / info pages */}
+                <Route path="/about" element={<About />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/contact" element={<Contact />} />
 
                 {/* Catch-all */}
                 <Route path="*" element={<Navigate to="/" replace />} />
