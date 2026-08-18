@@ -1,11 +1,21 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Trophy, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Navigation = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (location.hash) return;
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname, location.hash]);
+
+  const goHomeTop = () => {
+    setIsMenuOpen(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  };
   
   // replace the "Generator" item with FAQ
 const navItems = [
@@ -23,7 +33,12 @@ const navItems = [
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 font-bold text-xl">
+          <Link
+            to="/"
+            aria-label="Team Name Lab home"
+            onClick={goHomeTop}
+            className="flex items-center space-x-2 font-bold text-xl"
+          >
             <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-primary to-primary-glow rounded-lg">
               <Trophy className="w-5 h-5 text-primary-foreground" />
             </div>

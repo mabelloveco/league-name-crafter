@@ -6,6 +6,9 @@ import { AdSpace } from "@/components/AdSpace";
 import GeneratorInline from "@/components/GeneratorInline"; // use inline generator component
 import { Trophy, Zap, Users, Star } from "lucide-react";
 
+const leagueButtonClassName =
+  "h-11 rounded-xl bg-card px-6 font-semibold text-foreground shadow-[0_4px_14px_hsl(var(--foreground)/0.08)] ring-1 ring-foreground/5 transition-shadow duration-200 hover:bg-card hover:shadow-[0_6px_18px_hsl(var(--foreground)/0.12)]";
+
 const HomePage = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
@@ -14,11 +17,6 @@ const HomePage = () => {
     url: "https://teamnamelab.com",
     description:
       "Generate funny, inappropriate, and creative fantasy football team names instantly. The ultimate fantasy football team name generator with thousands of options.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://teamnamelab.com/generator",
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (
@@ -38,7 +36,7 @@ const HomePage = () => {
         </div>
 
         {/* HERO + GENERATOR */}
-        <section className="relative py-12 md:py-16 bg-muted">
+        <section className="relative overflow-x-hidden py-12 md:py-16 bg-muted">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-5xl mx-auto">
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 md:mb-6">
@@ -52,6 +50,63 @@ const HomePage = () => {
               {/* Inline generator inside hero */}
               <div className="max-w-4xl mx-auto">
                 <GeneratorInline />
+              </div>
+
+              <div className="relative mx-auto mt-14 max-w-3xl md:mt-16">
+                <svg
+                  className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[120px] w-[140vw] max-w-none -translate-x-1/2 -translate-y-1/2"
+                  viewBox="0 0 1400 120"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M0 58 C 180 58, 280 100, 420 72 S 680 18, 860 62 S 1140 108, 1400 52"
+                    stroke="hsl(var(--border))"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                  />
+                </svg>
+
+                <div className="relative z-10 rounded-[2.5rem] bg-card px-8 py-12 shadow-[0_12px_40px_-12px_hsl(var(--foreground)/0.12)] md:rounded-[3rem] md:px-16 md:py-16">
+                  <span className="mb-5 inline-flex rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-foreground">
+                    Step 2
+                  </span>
+                  <h2 className="mx-auto mb-4 max-w-lg text-2xl font-bold tracking-tight text-foreground md:text-4xl md:leading-tight">
+                    Did you register your team?
+                  </h2>
+                  <p className="mx-auto mb-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                    Use your new team name when creating or managing your fantasy football team on Yahoo Fantasy, ESPN Fantasy Football, or Sleeper.
+                  </p>
+                  <div className="flex flex-wrap items-center justify-center gap-3">
+                    <Button asChild variant="ghost" className={leagueButtonClassName}>
+                      <a
+                        href="https://football.fantasysports.yahoo.com/f1/signup"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Yahoo Fantasy
+                      </a>
+                    </Button>
+                    <Button asChild variant="ghost" className={leagueButtonClassName}>
+                      <a
+                        href="https://fantasy.espn.com/football/league/create"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        ESPN Fantasy Football
+                      </a>
+                    </Button>
+                    <Button asChild variant="ghost" className={leagueButtonClassName}>
+                      <a
+                        href="https://sleeper.com/create"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Sleeper
+                      </a>
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

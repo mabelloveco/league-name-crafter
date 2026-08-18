@@ -74,12 +74,12 @@ const FunnyNames = () => {
                   Get ready to dominate your league with laughter! These hilarious team names combine clever wordplay, 
                   football puns, and pure comedic genius. Your opponents will be laughing so hard, they'll forget to set their lineups.
                 </p>
-                <Link to="/">
-                  <Button variant="hero" size="lg">
-                    <Zap className="mr-2 h-5 w-5" />
+                <Button asChild size="lg" className="h-12 px-8 text-base font-semibold shadow-md hover:shadow-lg [&_svg]:size-5">
+                  <a href="#ideas">
+                    <Zap aria-hidden="true" />
                     Generate Random Funny Name
-                  </Button>
-                </Link>
+                  </a>
+                </Button>
               </div>
 
               {/* Why Funny Names Work */}
@@ -103,9 +103,9 @@ const FunnyNames = () => {
               </Card>
 
               {/* Name Grid */}
-              <div className="space-y-8">
+              <div id="ideas" tabIndex={-1} className="space-y-8 scroll-mt-24 outline-none">
                 <h2 className="text-3xl font-bold text-center text-foreground">
-                  Ideas for You
+                  Funny Name Ideas
                 </h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -9,8 +9,7 @@ import { Footer } from "@/components/Footer";
 
 // Pages
 import HomePage from "./pages/HomePage";
-import FAQ from "./pages/FAQ"; // ✅ new FAQ page
-import Generator from "./pages/Generator"; // ✅ Generator Q&A page
+import FAQ from "./pages/FAQ";
 import FunnyNames from "./pages/FunnyNames";
 import InappropriateNames from "./pages/InappropriateNames";
 import PlayerThemedNames from "./pages/PlayerThemedNames";
@@ -40,9 +39,8 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<HomePage />} />
 
-                {/* FAQ and Generator pages */}
                 <Route path="/faq" element={<FAQ />} />
-                <Route path="/generator" element={<Generator />} />
+                <Route path="/generator" element={<Navigate to="/" replace />} />
 
                 {/* Name pages */}
                 <Route path="/funny-names" element={<FunnyNames />} />

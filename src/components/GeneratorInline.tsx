@@ -4,8 +4,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { teamNames, TeamNameCategory } from "@/data/teamNames";
 import { RefreshCw, Zap } from "lucide-react";
 
+const CATEGORY_OPTIONS: { value: TeamNameCategory; label: string }[] = [
+  { value: "funny", label: "Funny" },
+  { value: "inappropriate", label: "Inappropriate" },
+  { value: "playerThemed", label: "Player-Themed" },
+  { value: "popCulture", label: "Pop Culture" },
+];
+
 export default function GeneratorInline() {
-  const [selectedCategory] = useState<TeamNameCategory>("funny");
+  const [selectedCategory, setSelectedCategory] = useState<TeamNameCategory>("funny");
   const [generatedName, setGeneratedName] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [keyword, setKeyword] = useState("");
@@ -34,6 +41,7 @@ export default function GeneratorInline() {
   ];
 
   const generateRandomName = () => {
+    if (isGenerating) return;
     setIsGenerating(true);
     setTimeout(() => {
       const k = keyword.trim();
@@ -59,32 +67,68 @@ export default function GeneratorInline() {
   return (
     <Card className="w-full max-w-3xl mx-auto shadow-lg border rounded-2xl overflow-hidden">
       <CardContent className="p-0">
-        {/* Chat-style input */}
-        <div className="flex flex-col md:flex-row md:items-center gap-3 bg-background border-b px-4 py-4 md:py-3">
-          <input
-            value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
-            placeholder="Type a player, word, or idea..."
-            className="w-full md:flex-1 rounded-md border px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-          <Button
-            onClick={generateRandomName}
-            disabled={isGenerating}
-            className="w-full md:w-auto px-6 py-3 text-base font-semibold bg-primary text-white rounded-lg hover:bg-primary/90 transition"
-          >
-            {isGenerating ? (
-              <>
-                <RefreshCw className="mr-2 h-5 w-5 animate-spin" />
-                Generating...
-              </>
-            ) : (
-              <>
-                <Zap className="mr-2 h-5 w-5" />
-                Generate
-              </>
-            )}
-          </Button>
-        </div>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            generateRandomName();
+          }}
+        >
+          <div className="bg-background border-b px-4 py-4 md:py-3">
+            <input
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+              placeholder="Type a player, word, or idea..."
+              aria-label="Keyword for your team name"
+              className="w-full rounded-md border px-4 py-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+          </div>
+
+          <div className="px-4 py-4 border-b bg-muted/20 space-y-4">
+            <div
+              role="group"
+              aria-label="Team name category"
+              className="flex flex-wrap gap-2 justify-center"
+            >
+              {CATEGORY_OPTIONS.map((option) => {
+                const isSelected = selectedCategory === option.value;
+                return (
+                  <button
+                    key={option.value}
+                    type="button"
+                    aria-pressed={isSelected}
+                    onClick={() => setSelectedCategory(option.value)}
+                    className={
+                      isSelected
+                        ? "px-3 py-1.5 rounded-full bg-primary text-primary-foreground border border-primary font-medium"
+                        : "px-3 py-1.5 rounded-full bg-white border text-muted-foreground hover:bg-primary/10 transition"
+                    }
+                  >
+                    {option.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            <Button
+              type="submit"
+              disabled={isGenerating}
+              size="lg"
+              className="w-full h-12 text-base font-semibold shadow-md hover:shadow-lg [&_svg]:size-5"
+            >
+              {isGenerating ? (
+                <>
+                  <RefreshCw className="animate-spin" aria-hidden="true" />
+                  Generating...
+                </>
+              ) : (
+                <>
+                  <Zap aria-hidden="true" />
+                  Generate
+                </>
+              )}
+            </Button>
+          </div>
+        </form>
 
         {/* Result */}
         {generatedName && (

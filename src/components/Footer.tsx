@@ -5,15 +5,20 @@ export const Footer = () => {
   return (
     <footer className="bg-muted/50 border-t border-border">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
+            <Link
+              to="/"
+              aria-label="Team Name Lab home"
+              onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "auto" })}
+              className="flex items-center space-x-2"
+            >
               <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-primary to-primary-glow rounded-lg">
                 <Trophy className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="font-bold text-lg text-primary">Team Name Lab</span>
-            </div>
+            </Link>
             <p className="text-sm text-muted-foreground">
               Generate the perfect fantasy football team name for your league. From funny to inappropriate, we’ve got you covered.
             </p>
@@ -51,7 +56,11 @@ export const Footer = () => {
             <h3 className="font-semibold mb-4 text-foreground">Tools</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  to="/"
+                  onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "auto" })}
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Name Generator
                 </Link>
               </li>
