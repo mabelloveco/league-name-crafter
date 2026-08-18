@@ -184,7 +184,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="lg:col-span-1">
+              <div className="hidden lg:block lg:col-span-1">
                 <div className="sticky top-24 space-y-6">
                   {/* Collapse until ads go live */}
                   <AdSpace size="sidebar" reserve={false} className="mx-auto" />

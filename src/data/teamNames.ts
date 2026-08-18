@@ -1,5 +1,98 @@
 // Fantasy Football Team Names Database
 
+const uniqueTeamNames = (...lists: readonly (readonly string[])[]): string[] => {
+  const seen = new Set<string>();
+  const merged: string[] = [];
+  for (const list of lists) {
+    for (const name of list) {
+      if (!seen.has(name)) {
+        seen.add(name);
+        merged.push(name);
+      }
+    }
+  }
+  return merged;
+};
+
+export const playerThemedNames = {
+  quarterback: [
+    "Mahomes Sweet Mahomes",
+    "Mahomes Alone",
+    "Country Roads Take Mahomes",
+    "Josh Allen My Heart",
+    "Allen the Family",
+    "Josh Allen Wrench",
+    "Lamar Jackson Five",
+    "Lamar You Serious",
+    "Maye the Force Be With You",
+    "It's Gonna Be Maye",
+    "Maye Day",
+    "Nix-elodeon",
+    "Big Nix Energy",
+    "Penix Attack",
+    "The Penix Is Mightier",
+    "Hurts So Good",
+    "Burrow Into Victory",
+    "Daniels in the Den",
+    "Caleb-rate Good Times",
+    "Rogers That",
+  ],
+  runningBack: [
+    "Gibbs and Take",
+    "Run It Gibbs",
+    "Jahmyr Time",
+    "Bijan Mustard",
+    "Bijan and the Jets",
+    "CMC Hammer Time",
+    "Run CMC",
+    "Taylor Made",
+    "Cook Islands",
+    "King Henry",
+    "Henry's Haulers",
+    "Saquon of Arc",
+    "Jeanty in a Bottle",
+    "Achane Reaction",
+    "Barkley's Bark",
+    "Hampton Inn Touchdowns",
+  ],
+  wideReceiver: [
+    "Chase the Bag",
+    "Chase Bank",
+    "Puka Shells",
+    "Nacua Matata",
+    "JSN of a Gun",
+    "Saint Brown Sugar",
+    "Jefferson Airplane",
+    "Lamb Chopped",
+    "Kupp Cakes",
+    "Cooper's Troopers",
+    "Diggs Deep Digs",
+    "Adams Family Values",
+    "London Calling",
+    "Nico and Easy",
+    "Brown Out in New England",
+    "Rice Rice Baby",
+  ],
+  tightEnd: [
+    "Kelce's Kingdom",
+    "Here Comes McBride",
+    "McBridesmaids",
+    "Bowers Power",
+    "Kittle Me This",
+  ],
+  classicRetired: [
+    "Brady Bunch",
+    "Manning Up",
+    "Brees-y Does It",
+    "Favre Dollar Footlong",
+    "Montana's Peak",
+    "Young Guns",
+    "Elway to Victory",
+    "Marino's Mermaids",
+    "Donald's Ducks",
+  ],
+} as const;
+
 export const teamNames = {
   funny: [
     "TouchdownTurboTax",
@@ -65,38 +158,13 @@ export const teamNames = {
     "Scandalous Squad",
     "The Risky Business"
   ],
-  playerThemed: [
-    "Mahomes Sweet Mahomes",
-    "Josh Allen My Heart",
-    "Lamar Jackson Five",
-    "CMC Hammer Time",
-    "Kelce's Kingdom",
-    "Adams Family Values",
-    "Cook Islands",
-    "Henry's Haulers",
-    "Diggs Deep Digs",
-    "Hopkins and Dreams",
-    "Kittle Me This",
-    "Cooper's Troopers",
-    "Jones Town Massacre",
-    "Hill Yeah!",
-    "Watt's Up Danger",
-    "Donald's Ducks",
-    "Bosa Nova",
-    "Garrett's Pirates",
-    "Mack Attack",
-    "Miller Time Defense",
-    "Wilson's Warriors",
-    "Rogers That!",
-    "Brady Bunch",
-    "Manning Up",
-    "Brees-y Does It",
-    "Favre Dollar Footlong",
-    "Montana's Peak",
-    "Young Guns",
-    "Elway to Victory",
-    "Marino's Mermaids"
-  ],
+  playerThemed: uniqueTeamNames(
+    playerThemedNames.quarterback,
+    playerThemedNames.runningBack,
+    playerThemedNames.wideReceiver,
+    playerThemedNames.tightEnd,
+    playerThemedNames.classicRetired
+  ),
   popCulture: [
     "Game of Throws",
     "The Walking Thread",

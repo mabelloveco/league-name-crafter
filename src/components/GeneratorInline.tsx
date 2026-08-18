@@ -19,8 +19,9 @@ export default function GeneratorInline() {
 
   // Expanded pool of ideas for the "Give me more ideas" functionality
   const allIdeas = [
-    "Mahomes", "Swifties", "Touchdown", "Blitz", "Dynasty", "Thunder", "Express",
-    "Brady", "Rodgers", "Allen", "Lamar", "Wilson", "Burrow", "Herbert",
+    "Mahomes", "Maye", "Nix", "Penix", "Gibbs", "Chase", "Bijan", "JSN",
+    "Allen", "Lamar", "Burrow", "Herbert", "Brady", "Rodgers", "Swifties",
+    "Touchdown", "Blitz", "Dynasty", "Thunder", "Express",
     "Chiefs", "Bills", "Cowboys", "Packers", "Ravens", "Bengals", "Chargers",
     "Fantasy", "Draft", "Waiver", "Playoff", "Championship", "Victory",
     "Gridiron", "Endzone", "Fumble", "Interception", "Sack", "Rush",
@@ -28,7 +29,7 @@ export default function GeneratorInline() {
     "Pigskin", "Helmet", "Cleats", "Jersey", "Stadium", "Huddle"
   ];
 
-  const [currentIdeas, setCurrentIdeas] = useState(["Mahomes", "Swifties", "Touchdown", "Blitz"]);
+  const [currentIdeas, setCurrentIdeas] = useState(["Maye", "Gibbs", "Chase", "Nix"]);
 
   const templates: Array<(k: string) => string> = [
     (k) => `${k} Dynasty`,
